@@ -11,6 +11,7 @@
   In the example below, we are accessing the property values. Uncomment the code below, run it and look at what prints in the console.
 */
 
+
 // var values = {
 //   one: 'These',
 //   two: ' are',
@@ -40,7 +41,15 @@
 */
 
 function showValues( obj ) {
-  //Code Here
+//Code Here
+    var concatString = '';
+    for (var i in obj) {
+        console.log(obj)
+        console.log(obj[i])
+        console.log(i);
+        concatString += obj[i];
+    }
+    return concatString;
 }
 
 
@@ -54,7 +63,14 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+function greaterThan10( obj ){
+    for (var i in obj) {
+        if (obj[i] > 10) {
+            obj[i] = 0;
+        }
+    }
+    return obj;
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -66,7 +82,12 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+function double( obj ) {
+   for (var i in obj) {
+      obj[i] = obj[i] * 2;
+   }
+   return obj;
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -80,7 +101,15 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+function secrets(obj) {
+   var emptStr = '';
+   for (var i in obj) {
+      if (i[0] === 's' && i[1] === 'h') {
+         emptStr += obj[i];
+      }
+   }
+   return emptStr;
+}
 
 
 /* 
@@ -111,7 +140,10 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+function removePassword(obj) {
+   delete obj.password;
+   return obj;
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -130,7 +162,11 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
+for (var i in deleteTheBigNumbers) {
+   if (deleteTheBigNumbers[i] > 100) {
+      delete deleteTheBigNumbers[i];
+   }
+}
 
 
 ////////// PROBLEM 7 //////////
